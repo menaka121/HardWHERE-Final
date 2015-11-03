@@ -1,5 +1,8 @@
 package com.hardwhere.model;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by menaka on 11/3/15.
  * This is the class for holding person information.
@@ -11,24 +14,27 @@ public class Person {
      * Basic attributes for Person.
      * Accessible only with getters and setters
      * **/
-    private String name;
+    private String firstName;
+    private String lastName;
     private Address address;
     private String email;
     private String nic;
-    private String telephoneNumber;
+    private HashMap<String, String> telephoneNumber;
     private String userName;
     private String password;
 
-    public Person(String name,
+    public Person(String firstName,
+                  String lastName,
                   String email,
                   String nic,
-                  String telephoneNumber,
+                  HashMap<String, String> telephoneNumber,
                   String username,
                   String password,
                   Address address){
         this.address = address;
         this.email = email;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.nic = nic;
         this.telephoneNumber = telephoneNumber;
         this.userName = username;
@@ -36,11 +42,11 @@ public class Person {
     }
 
     public String getName() {
-        return name;
+        return this.firstName + " " + this.lastName;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getAddress() {
+        return address.toString();
     }
 
     public String getEmail() {
@@ -49,10 +55,6 @@ public class Person {
 
     public String getNic() {
         return nic;
-    }
-
-    public String getTelephoneNumber() {
-        return telephoneNumber;
     }
 
     public String getUserName() {
