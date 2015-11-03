@@ -28,7 +28,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="HardWHERE" target="1.5" />
-      <module name="HardWHERE-Final" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
