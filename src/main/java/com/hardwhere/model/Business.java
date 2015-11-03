@@ -13,13 +13,14 @@ public class Business {
     private String name;
     private String telephone;
 
-    //private Type type
+    private BusinessType type;
 
-    public Business(Person person, Address address, String name, String telephone){
+    public Business(Person person, Address address, String name, String telephone, BusinessType type){
         this.owner = person;
         this.address = address;
         this.name = name;
         this.telephone = telephone;
+        this.type = type;
     }
 
 
