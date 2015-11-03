@@ -29,7 +29,7 @@ public class CreatePersonFactory {
 
         tp.put("Mobile", request.getParameter("mobile"));
         tp.put("Land", request.getParameter("land"));
-        tp.put("fax", request.getParameter("fax"));
+        tp.put("Fax", request.getParameter("fax"));
 
         Person person = new Person(
                 request.getParameter("firstName"),
