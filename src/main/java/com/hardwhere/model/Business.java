@@ -11,6 +11,17 @@ public class Business {
     private Person owner;
     private Address address;
     private String name;
-    //private
+    private String telephone;
+
+    //private Type type
+
+    public Business(Person person, Address address, String name, String telephone){
+        this.owner = person;
+        this.address = address;
+        this.name = name;
+        this.telephone = telephone;
+    }
+
+
 
 }
