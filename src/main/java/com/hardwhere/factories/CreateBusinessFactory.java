@@ -9,8 +9,6 @@ import com.hardwhere.model.Business;
  */
 public class CreateBusinessFactory {
 
-    public Business createBusiness(){
-        return new Business();
-    }
+
 
 }
