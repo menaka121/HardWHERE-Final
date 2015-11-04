@@ -1,4 +1,4 @@
-package com.hardwhere.smscontroller;
+package com.hardwhere.controller.smscontroller;
 
 /**
  * Created by tharinda on 11/4/15.
