@@ -1,4 +1,4 @@
-package com.hardwhere.controller.Functions;
+package com.hardwhere.controller.functions;
 
 import com.hardwhere.model.Item;
 import com.mongodb.*;

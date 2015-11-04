@@ -4,7 +4,7 @@ package com.hardwhere.controller.smsController;
  * Created by tharinda on 11/4/15.
  */
 
-import com.hardwhere.controller.Functions.Query;
+import com.hardwhere.controller.functions.Query;
 import com.hardwhere.model.Item;
 import hms.kite.samples.api.SdpException;
 import hms.kite.samples.api.sms.MoSmsListener;
