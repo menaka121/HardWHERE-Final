@@ -29,11 +29,24 @@ public class JsonPharserTester {
         Gson gson = new Gson();
         String json = gson.toJson(p);
 
-        System.out.printf(json);
+        System.out.println(json);
 
+        System.out.println("==================================================");
         //Retrieve it back
+        System.out.println("Getting data back");
         Person p2 = gson.fromJson(json, Person.class);
-        System.out.println(p2.getTelephoneNumber().get("Land"));
+
+
+        System.out.println("Telephone numbers : Data structure = HashMap");
+        System.out.println(p2.getTelephoneNumber());
+
+
+        System.out.println("Mobile number only:");
+        System.out.println(p2.getTelephoneNumber().get("Mobile"));
+
+
+        System.out.println("Address: Address class ");
+        System.out.println(p2.getAddress());
 
 
     }
