@@ -1,1 +1,36 @@
 Insert any kind of resources here
+
+inserting and retrieving java objects - mongodb
+       =========================================================================================
+        DB db = mongoClient.getDB( "mydb" );
+
+        coll = db.getCollection("testCollection");
+
+        Employee emp = new Employee();
+        emp.setId("1001");
+        emp.setName("John Doe");
+
+        //Converting a custom Class(Employee) to BasicDBObject
+        Gson gson = new Gson();
+        BasicDBObject obj = (BasicDBObject)JSON.parse(gson.toJson(emp));
+        coll.insert(obj);
+        findEmployee(new BasicDBObject("id","1001"));
+
+
+        public static void findEmployee(BasicDBObject query){
+
+            DBCursor cursor = coll.find(query);
+
+            try {
+               while(cursor.hasNext()) {
+                  DBObject dbobj = cursor.next();
+                //Converting BasicDBObject to a custom Class(Employee)
+                  Employee emp = (new Gson()).fromJson(dbobj.toString(), Employee.class);
+                  System.out.println(emp.getName());
+               }
+            } finally {
+               cursor.close();
+            }
+
+        }
+        =========================================================================================
