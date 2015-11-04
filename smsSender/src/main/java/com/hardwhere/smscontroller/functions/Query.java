@@ -1,4 +1,4 @@
-package com.hardwhere.controller.functions;
+package com.hardwhere.smscontroller.functions;
 
 import com.hardwhere.model.Item;
 import com.mongodb.*;
