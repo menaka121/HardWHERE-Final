@@ -65,6 +65,10 @@ public class Person {
         return password;
     }
 
+    public HashMap<String, String> getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
     /**
      * Giving ability of change the address, username or password
      * */
