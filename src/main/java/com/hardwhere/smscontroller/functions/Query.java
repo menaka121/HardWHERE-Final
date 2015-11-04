@@ -179,15 +179,15 @@ public class Query  extends HttpServlet {
             BasicDBObject items= (BasicDBObject) cursor.next();
             Item item_pojo=new Item();
             item_pojo.setCompany_id(items.getString("company_id"));
-            item_pojo.setItem_Brand(items.getString("item_Brand"));
-            item_pojo.setItem_Description(items.getString("item_Description"));
-            item_pojo.setItem_ID(items.getString("item_ID"));
-            item_pojo.setItem_Image(items.getString("item_Image"));
-            item_pojo.setItem_Model(items.getString("item_Model"));
-            item_pojo.setItem_Name(items.getString("item_Name"));
-            item_pojo.setItem_Price(items.getString("item_Price"));
-            item_pojo.setItem_Size(items.getString("item_Size"));
-            item_pojo.setItem_Thickness(items.getString("item_Thickness"));
+//            item_pojo.setItem_Brand(items.getString("item_Brand"));
+//            item_pojo.setItem_Description(items.getString("item_Description"));
+//            item_pojo.setItem_ID(items.getString("item_ID"));
+//            item_pojo.setItem_Image(items.getString("item_Image"));
+//            item_pojo.setItem_Model(items.getString("item_Model"));
+//            item_pojo.setItem_Name(items.getString("item_Name"));
+//            item_pojo.setItem_Price(items.getString("item_Price"));
+//            item_pojo.setItem_Size(items.getString("item_Size"));
+//            item_pojo.setItem_Thickness(items.getString("item_Thickness"));
             item_pojo.setItem_Type(items.getString("item_Type"));
             arrayList.add(item_pojo);
         }

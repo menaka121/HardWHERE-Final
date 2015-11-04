@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HardWHERE.iml" filepath="$PROJECT_DIR$/HardWHERE.iml" />
-      <module fileurl="file://$PROJECT_DIR$/smsSender/smsSender.iml" filepath="$PROJECT_DIR$/smsSender/smsSender.iml" />
     </modules>
   </component>
 </project>
