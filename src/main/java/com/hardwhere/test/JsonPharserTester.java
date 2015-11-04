@@ -2,8 +2,7 @@ package com.hardwhere.test;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
-import com.hardwhere.model.Address;
-import com.hardwhere.model.Person;
+import com.hardwhere.model.*;
 
 
 import java.util.HashMap;
@@ -48,6 +47,18 @@ public class JsonPharserTester {
         System.out.println("Address: Address class ");
         System.out.println(p2.getAddress());
 
+
+        Item i1 = new Item();
+        i1.setItem_Name("Thsu");
+
+        Business nb = new Business(p, ad, "paS", "sffsd", BusinessType.SHOP);
+        nb.addItem(i1);
+        System.out.println(gson.toJson(nb));
+        String s = gson.toJson(nb);
+
+        Business nb2 = gson.fromJson(s, Business.class);
+        Person p3 = nb2.getOwner();
+        System.out.println("Business person: "+p3.getEmail());
 
     }
 }
