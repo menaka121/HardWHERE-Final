@@ -3,8 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>HardWHERE</groupId>
   <artifactId>HardWHERE</artifactId>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>/smsSender</module>
+  </modules>
+
+
   <name>HardWHERE Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -47,11 +52,11 @@
       <version>2.4</version>
     </dependency>
 
-    <!--<dependency>-->
-      <!--<groupId>com.google.code.gson</groupId>-->
-      <!--<artifactId>gson</artifactId>-->
-      <!--<version>1.7.1</version>-->
-    <!--</dependency>-->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>1.7.1</version>
+    </dependency>
 
     <dependency>
       <groupId>commons-logging</groupId>
@@ -81,7 +86,15 @@
       <systemPath>${project.basedir}/src/main/resources/gson-1.7.2.jar</systemPath>
     </dependency>
 
+    <dependency>
+      <groupId>com.</groupId>
+      <artifactId>smsSender</artifactId>
+      <type>sms-jar</type>
+      <scope>system</scope>
+    </dependency>
+
   </dependencies>
+
   <build>
     <finalName>HardWHERE</finalName>
   </build>

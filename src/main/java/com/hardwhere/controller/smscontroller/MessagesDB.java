@@ -1,13 +1,10 @@
-package com.hardwhere.controller.smsController;
+package com.hardwhere.controller.smscontroller;
 
 /**
  * Created by tharinda on 11/4/15.
  */
 
 import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import com.mongodb.*;
 
