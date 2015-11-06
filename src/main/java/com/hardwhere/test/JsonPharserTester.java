@@ -2,10 +2,15 @@ package com.hardwhere.test;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import com.hardwhere.factories.DBConnectionFactory;
 import com.hardwhere.model.Address;
 import com.hardwhere.model.Person;
+import com.mongodb.*;
+import com.mongodb.util.JSON;
+import org.mongodb.morphia.query.Query;
 
 
+import java.net.UnknownHostException;
 import java.util.HashMap;
 
 /**
@@ -22,7 +27,14 @@ public class JsonPharserTester {
         HashMap<String, String> pb = new HashMap<String, String>();
         pb.put("Land", "041510005");
         pb.put("Mobile", "0718851183");
-        Person p = new Person("Menaka", "j", "menaka@wso2.com", "143343432v", pb, "menalka", "menalka123", ad);
+
+        HashMap<String, String> pb2 = new HashMap<String, String>();
+        pb2.put("Land", "0415100035");
+        pb2.put("Mobile", "0718851183");
+        Person p = new Person("sss", "j", "menaka@wso2.comsdkjfhdsfk", "143343432v", pb2, "menalka", "menalka123", ad);
+        Person p3 = new Person("Menak12a", "j", "menaka@sfdsf.com", "143343432v", pb, "menalka", "menalka123", ad);
+        Person p9 = new Person("Menaka34", "j", "menaka@qwewq.com", "143343432v", pb2, "menalka", "menalka123", ad);
+        Person p0 = new Person("Menaka232", "j", "menaka@qeqwe.com", "143343432v", pb, "menalka", "menalka123", ad);
 
 
         //Converting the person object to a json string
@@ -47,6 +59,51 @@ public class JsonPharserTester {
 
         System.out.println("Address: Address class ");
         System.out.println(p2.getAddress());
+
+        try {
+            MongoClient c = new DBConnectionFactory().createConnection();
+            BasicDBObject object = (BasicDBObject) JSON.parse(json);
+
+//            BasicDBObject obj = (BasicDBObject)JSON.parse(gson.toJson(emp));
+
+            DB db = c.getDB("db");
+            DBCollection col = db.getCollection("test");
+
+            col.insert(object);
+            col.insert((BasicDBObject)JSON.parse(gson.toJson(p)));
+            col.insert((BasicDBObject)JSON.parse(gson.toJson(p9)));
+            col.insert((BasicDBObject)JSON.parse(gson.toJson(p3)));
+//            col.insert((BasicDBObject)JSON.parse(gson.toJson(p0)));
+            System.out.println("Collection inserted.");
+            DBObject obj = new BasicDBObject();
+            BasicDBObject basicDBObject =new BasicDBObject();
+            basicDBObject.put("firstName", "sss");
+            basicDBObject.put("Land", "04151000035");
+//            obj.put(basicDBObject);
+//            obj.put();
+
+
+
+
+
+
+            DBCursor cr = col.find(obj);
+            Person p4 = null;
+            System.out.println(cr.hasNext());
+            DBObject dbo = null;
+            while(cr.hasNext()){
+                dbo = cr.next();
+                p4 = (new Gson()).fromJson(dbo.toString(), Person.class);
+//                System.out.println(p4!=null?"yes":"no");
+            }
+            System.out.println(dbo);
+//            System.out.println(p4.getName());
+//            System.out.println(p4.getEmail());
+
+
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
 
 
     }

@@ -15,6 +15,7 @@ public class DBConnectionFactory {
         synchronized (this){
             count++;
         }
+        System.out.println("Connection established!");
         return new MongoClient("localhost", 27017);
     }
 
