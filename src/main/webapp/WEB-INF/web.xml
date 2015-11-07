@@ -4,4 +4,20 @@
 
 <web-app>
   <display-name>HardWHERElk.com</display-name>
+
+    <servlet>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>com.hardwhere.controller.servlets.Query</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TypeSearch</servlet-name>
+        <servlet-class>com.hardwhere.controller.function.TypeSearch</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

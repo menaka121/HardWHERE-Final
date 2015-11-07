@@ -19,7 +19,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/HardWHERE/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="E:\Projects\HardWHERE-Final\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="HardWHERE/web/Web" />
     </root>

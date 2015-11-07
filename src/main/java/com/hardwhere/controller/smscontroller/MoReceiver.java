@@ -4,7 +4,6 @@ package com.hardwhere.controller.smscontroller;
  * Created by tharinda on 11/4/15.
  */
 
-import com.hardwhere.controller.functions.Query;
 import com.hardwhere.model.Item;
 import hms.kite.samples.api.SdpException;
 import hms.kite.samples.api.sms.MoSmsListener;
@@ -42,11 +41,8 @@ public class MoReceiver implements MoSmsListener
 
         MtSmsReq mtSmsReq = new MtSmsReq();
         if (messages[1].equals("query")){
-            try {
-                mtSmsReq.setMessage(sendQuery(messages[2]));
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-            }
+
+//            mtSmsReq.setMessage(sendQuery(messages[2]));
         }else {
 
             mtSmsReq.setMessage("We'll reply you soon!");
@@ -83,24 +79,24 @@ public class MoReceiver implements MoSmsListener
 
     }
 
-    public String sendQuery(String itemName) throws UnknownHostException {
-
-        ArrayList<Item> items;
-        String out="";
-        items=new Query().getItemsByrPrice(itemName);
-
-        if (items.size() == 0){
-            out = "That item is not this shop";
-        }
-        else {
-
-            for (int i = 0; i < items.size(); i++) {
-
-                out = out + "description:" + items.get(i).getItem_Description() + " " +
-                        "price:" + items.get(i).getItem_Price() + "\n";
-            }
-        }
-        return out;
-    }
+//    public String sendQuery(String itemName) throws UnknownHostException {
+//
+//        ArrayList<Item> items;
+//        String out="";
+//        items=new Query().getItemsByrPrice(itemName);
+//
+//        if (items.size() == 0){
+//            out = "That item is not this shop";
+//        }
+//        else {
+//
+//            for (int i = 0; i < items.size(); i++) {
+//
+//                out = out + "description:" + items.get(i).getItem_Description() + " " +
+//                        "price:" + items.get(i).getItem_Price() + "\n";
+//            }
+//        }
+//        return out;
+//    }
 
 }
