@@ -5,12 +5,12 @@ package com.hardwhere.model;
  */
 public enum BusinessType {
 
-    SHOP{
+    TECH_SERVICES{
         /**
          * If the registered business is a shop, that is a hardware shop
          * */
     },
-    SERVICE{
+    ENG_SERVICE{
 
         /**
          * If registered as a service provider, that is a business which provides necessary services

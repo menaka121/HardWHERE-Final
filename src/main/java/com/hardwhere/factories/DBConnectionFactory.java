@@ -2,6 +2,7 @@ package com.hardwhere.factories;
 
 import com.mongodb.MongoClient;
 
+import java.io.IOException;
 import java.net.UnknownHostException;
 
 /**
@@ -11,12 +12,21 @@ public class DBConnectionFactory {
 
     private int count;
 
-    public MongoClient createConnection() throws UnknownHostException {
+    private MongoClient client = null;
+    public MongoClient createConnection() {
         synchronized (this){
             count++;
         }
-        System.out.println("Connection established!");
-        return new MongoClient("localhost", 27017);
+        try {
+
+            client = new MongoClient("localhost", 27017);
+            System.out.println("Connection established!");
+
+        } catch (UnknownHostException e) {
+            System.out.println("Mongo client connection failed.");
+            return null;
+        }
+        return client;
     }
 
 }

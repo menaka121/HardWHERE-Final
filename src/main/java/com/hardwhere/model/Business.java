@@ -14,8 +14,6 @@ public class Business {
     private Address address;
     private String name;
     private String telephone;
-    private LinkedList<Item> itemList = new LinkedList<Item>();
-
     private BusinessType type;
 
     public Business(Person person, Address address, String name, String telephone, BusinessType type){
@@ -24,19 +22,6 @@ public class Business {
         this.name = name;
         this.telephone = telephone;
         this.type = type;
-    }
-
-    public boolean addItem(Item item){
-        if(item != null)
-            this.itemList.add(item);
-        else
-            return false;
-
-        return true;
-    }
-
-    public LinkedList<Item> getItemList() {
-        return itemList;
     }
 
     public Person getOwner() {

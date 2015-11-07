@@ -5,122 +5,111 @@ package com.hardwhere.model;
  */
 public class Item {
 
-    private String item_ID;
-    private String item_Name;
-    private String item_Description;
-    private String item_Price;
-    private String item_Image;
-    private String user;
-    private String company_id;
-    private ItemType item_Type;
+    private double itemId;
+    private Business business;
+    private ItemType itemType;
+    private String itemName;
+    private String itemDescription;
+    private String itemPrice;
+    private String itemImage;
+    private String itemModel;
+    private String itemBrand;
+    private String itemSize;
+    private float itemThickness;
 
 
-    //Make this class the parent so that all the material types can extend this class.
 
-    private String item_Model;
-    private String item_Brand;
-    private String item_Size;
-    private String item_Thickness;
-
-    public String getItem_Model() {
-        return item_Model;
+    public double getItemId() {
+        return itemId;
     }
 
-    public void setItem_Model(String item_Model) {
-        this.item_Model = item_Model;
+    public void setItemId(double itemId) {
+        this.itemId = itemId;
     }
 
-    public String getItem_Brand() {
-        return item_Brand;
+    public Business getBusiness() {
+        return business;
     }
 
-    public void setItem_Brand(String item_Brand) {
-        this.item_Brand= item_Brand;
+    public void setBusiness(Business business) {
+        this.business = business;
     }
 
-    public String getItem_Size() {
-        return item_Size;
+    public ItemType getItemType() {
+        return itemType;
     }
 
-    public void setItem_Size(String item_Size) {
-        this.item_Size = item_Size;
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
     }
 
-    public String getItem_Thickness() {
-        return item_Thickness;
+    public String getItemName() {
+        return itemName;
     }
 
-    public void setItem_Thickness(String item_Thickness) {
-        this.item_Thickness = item_Thickness;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
-    public ItemType getItem_Type() {
-        return item_Type;
+    public String getItemDescription() {
+        return itemDescription;
     }
 
-    public void setItem_Type(ItemType item_Type) {
-        this.item_Type = item_Type;
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
     }
 
-    public String getCompany_id() {
-        return company_id;
+    public String getItemPrice() {
+        return itemPrice;
     }
 
-    public void setCompany_id(String company_id) {
-        this.company_id = company_id;
+    public void setItemPrice(String itemPrice) {
+        this.itemPrice = itemPrice;
     }
 
-    public String getUser() {
-        return user;
+    public String getItemImage() {
+        return itemImage;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setItemImage(String itemImage) {
+        this.itemImage = itemImage;
     }
 
-    public String getItem_ID() {
-        return item_ID;
+    public String getItemModel() {
+        return itemModel;
     }
 
-    public void setItem_ID(String item_ID) {
-        this.item_ID = item_ID;
+    public void setItemModel(String itemModel) {
+        this.itemModel = itemModel;
     }
 
-    public String getItem_Name() {
-        return item_Name;
+    public String getItemBrand() {
+        return itemBrand;
     }
 
-    public void setItem_Name(String item_Name) {
-        this.item_Name = item_Name;
+    public void setItemBrand(String itemBrand) {
+        this.itemBrand = itemBrand;
     }
 
-    public String getItem_Description() {
-        return item_Description;
+    public String getItemSize() {
+        return itemSize;
     }
 
-    public void setItem_Description(String item_Description) {
-        this.item_Description = item_Description;
+    public void setItemSize(String itemSize) {
+        this.itemSize = itemSize;
     }
 
-    public String getItem_Price() {
-        return item_Price;
+    public float getItemThickness() {
+        return itemThickness;
     }
 
-    public void setItem_Price(String item_Price) {
-        this.item_Price = item_Price;
-    }
-
-    public String getItem_Image() {
-        return item_Image;
-    }
-
-    public void setItem_Image(String item_Image) {
-        this.item_Image = item_Image;
+    public void setItemThickness(float itemThickness) {
+        this.itemThickness = itemThickness;
     }
 
     public String toString(){
-        return "Item Name: " + this.getItem_Name()+
-                "Item Description: " + this.getItem_Description()+
-                "Price: " + this.getItem_Price();
+        return "Item Name: " + this.getItemName()+
+                "Item Description: " + this.getItemDescription()+
+                "Price: " + this.getItemPrice();
     }
 }

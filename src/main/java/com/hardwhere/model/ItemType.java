@@ -1,11 +1,13 @@
 package com.hardwhere.model;
 
+import java.io.Serializable;
+
 /**
  * Created by menaka on 11/6/15.
  */
 public enum ItemType {
     TILE{
-        
+
          boolean item_Name = true;
          boolean item_Description = true;
          boolean item_Price = true;
@@ -28,5 +30,10 @@ public enum ItemType {
         boolean item_Size = false;
         boolean item_Thickness = false;
 
+    };
+
+
+    public String getType(){
+        return this.name();
     }
 }
